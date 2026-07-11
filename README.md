@@ -1,16 +1,39 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack expense tracking app that lets users add, view, and delete personal expenses, with data persisted in a PostgreSQL database.
 
-Currently, two official plugins are available:
+## Features
+- Add expenses with title, amount, and category
+- View all expenses in real time
+- Delete expenses
+- Data persisted via PostgreSQL (Supabase) using Prisma ORM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- **Frontend:** React, Vite
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL (Supabase)
+- **ORM:** Prisma
 
-## React Compiler
+## Running Locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+\`\`\`bash
+cd server
+npm install
+npx prisma generate
+npm run dev
+\`\`\`
 
-## Expanding the ESLint configuration
+### Frontend
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a \`.env\` file inside \`server/\` with:
+\`\`\`
+DATABASE_URL=your_supabase_connection_string
+\`\`\`
+
+## What I Learned
+Building this project involved setting up a full-stack connection between React, Express, and a PostgreSQL database using Prisma — including debugging ORM version mismatches and understanding how schema migrations sync with a live database.
